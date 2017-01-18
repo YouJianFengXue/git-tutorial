@@ -1,4 +1,5 @@
 #gitlearn
 #gitlearn
 
-	-feature-A
+	- feature-A
+	- fix-B
