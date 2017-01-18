@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/1.png" id="pic"/>
+		<button id="next"> 下一张</button>
+	</body>
+	<script type="text/javascript">
+		var num = 0;
+		var pic = document.getElementById("pic");
+		var next =document.getElementById("next");
+		var arr=["img/1.png","img/2.png","img/3.png","img/4.png"];
+		next.onclick = function(){
+			num++;
+			if(num>3){
+				num=0;
+			}
+			pic.src = arr[num];
+		}
+	</script>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body,html{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			#xunhuan{
+				position: absolute;
+				left: 44%;
+			}
+			#shunxu{
+				position: absolute;
+				left: 50%;
+			}
+			#title{
+				position: absolute;
+				left: 44%;
+				top: 5%;
+			}
+			#box{
+				border: 15px lightgrey solid;
+				position: absolute;
+				top: 8%;
+				left: 35%;
+				width: 27.15%;
+				height: 57.3%;
+			}
+			#zuo{
+				background: white;
+				opacity: 0.6;
+				position: absolute;
+				width: 10%;
+				height: 10%;
+				left: 5%;
+				top: 45%;
+				transition: 0.1s;
+			}
+			#you{
+				background: white;
+				opacity: 0.6;
+				position: absolute;
+				width: 10%;
+				height: 10%;
+				right: 5%;
+				top: 45%;
+				transition: 0.1s;
+			}
+			#zuo1{
+				color: black;
+				font-size: 45px;
+				font-weight: bolder;
+				text-decoration: none;
+				/*line-height: 100%;*/
+				text-align: center;
+				display: block;
+				width: 100%;
+				height: 100%;
+				
+			}
+			#you1{
+				color: black;
+				font-size: 45px;
+				font-weight: bolder;
+				text-decoration: none;
+				text-align: center;
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			#zuo:hover{
+				background: black;
+				opacity: 0.6;
+			}
+			#you:hover{
+				background: black;
+				opacity: 0.6;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="xunhuan" id="xunhuan" value="循环切换" />
+		<input type="button" name="shunxu" id="shunxu" value="顺序切换" />
+		<div id="title">
+			<a>随便切</a>
+		</div>
+		<div id="box">
+			<a id="title1" >
+				
+			</a>
+			<img src="../img/1.png" id="pic"/>
+			<p id="title2">
+				
+			</p>
+			<div id="zuo">
+			<a id="zuo1" href="#"><</a>
+			</div>
+			<div id="you">
+			<a id="you1" href="#">></a>
+			</div>
+			<!--<input type="button" name="zuo" id="zuo" value="<" id="zuo" />-->
+			<!--<input type="button" name="you" id="you" value=">" id="you"/>-->
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var num = 0;
+		var qie = 1;
+		var pic = document.getElementById("pic");
+		var next =document.getElementById("you");
+		var before =document.getElementById("zuo");
+		var shunxu = document.getElementById("shunxu");
+		var xunhuan = document.getElementById("xunhuan");
+		var title = document.getElementById("title");
+		var arr=["../img/1.png","../img/2.png","../img/3.png","../img/4.png"];
+		
+		shunxu.onclick = function(){
+			qie = 0;
+			title.innerHTML = "<a>图片只能从第一张切到最后一张</a>";
+		};
+		xunhuan.onclick = function(){
+			qie = 1;
+			title.innerHTML = "<a>随便切</a>";
+		};
+		next.onclick = function(){
+			num++;
+			if(num>3){
+				if(qie==1){
+					num=0;
+					pic.src = arr[num];
+				}
+				else{
+					alert("this is the lest one");
+					num=3;
+				}
+			}
+			else{
+				pic.src = arr[num];
+			}
+		};
+		before.onclick = function(){
+			num--;
+			if(num<0){
+				if(qie==1){
+					num=3;
+					pic.src = arr[num];
+				}
+				else{
+					alert("this is the first one");
+					num=0;
+				}
+			}
+			else{
+				pic.src = arr[num];
+			}
+		};
+	</script>
+</html>

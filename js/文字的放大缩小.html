@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="title">
+			进入开发者工具
+		</p>
+		<input type="button" name="big" id="big" value="fangda" />
+		<input type="button" name="small" id="small" value="xiao" />
+		
+	</body>
+	<script type="text/javascript">
+//	通过js修改样式
+	var size =14;
+		var big = document.getElementById("big");
+		var small = document.getElementById("small");
+		var title = document.getElementById("title");
+		big.onclick = function () {
+			size+=2;
+			title.style.fontSize = size + "px";
+		}
+		small.onclick = function () {
+			size-=2;
+			title.style.fontSize = size + "px";
+		}
+	</script>
+</html>

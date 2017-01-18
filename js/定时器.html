@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>0</title>
+	</head>
+	<body>
+		<p id="text"></p>
+	</body>
+	<script type="text/javascript">
+		var i=0;
+		var text =document.getElementById("text");
+		var timer;
+//		for(var i = 0; i<10;i++){
+//			
+//		}
+//		每隔多少毫秒就执行
+		timer = setInterval(function(){
+			i++;
+			text.innerText = i;
+		if(i == 10){
+			clearInterval(timer);
+		}},1000)
+	</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 100px;
+				left: 10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<button id ="front">go front</button>
+		<button id="back">go back</button>
+		<button id="down">go down</button>
+		<button id="up">go up</button>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		var timer;
+		var X = 10;
+		var Y = 100;
+		var up = document.getElementById("up");
+		var down = document.getElementById("down");
+		var back = document.getElementById("back");
+		var front = document.getElementById("front");
+		var box = document.getElementById("box");
+//		back.onclick=function(){};
+		front.onclick=function(){
+			clearInterval(timer);
+			timer = setInterval(
+				function(){
+					if(X>1000){
+						clearInterval(timer);
+					}
+					else{
+						X+=5;
+						box.style.left=X+"px";
+					}
+					
+				}
+			,10);
+		};
+		back.onclick=function(){
+			clearInterval(timer);
+			timer = setInterval(
+				function(){
+					if(X<10){
+						clearInterval(timer);
+					}
+					else{
+						X-=5;
+						box.style.left=X+"px";
+					}
+				}
+			,10);
+		};
+		down.onclick=function(){
+			clearInterval(timer);
+			timer = setInterval(
+				function(){
+					if(Y>800){
+						clearInterval(timer);
+					}
+					else{
+						Y+=5;
+						box.style.top=Y+"px";
+					}
+				}
+			,10);
+		};
+		up.onclick=function(){
+			clearInterval(timer);
+			timer = setInterval(
+				function(){
+					if(Y<100){
+						clearInterval(timer);
+					}
+					else{
+						Y-=5;
+						box.style.top=Y+"px";
+					}
+				}
+			,10);
+		};
+	</script>
+</html>

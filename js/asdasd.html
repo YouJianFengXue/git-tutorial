@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="text" id="text" value="" />
+		<input type="button" name="" id="sure" value="评论" />
+		<div id="box">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var text =document.getElementById("text");
+		var sure =document.getElementById("sure");
+		var box =document.getElementById("box");
+		sure.onclick = function() {
+//			innerHTML可以识别标签属性
+			box.innerHTML = text .value
+		}
+	</script>
+</html>
